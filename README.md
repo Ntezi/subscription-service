@@ -1,10 +1,10 @@
 # Subscriptions Service
 
-This guide provides instructions on how to set up and run the Laravel Subscriptions Service using Docker. The setup includes an Adminer interface for database management and seeded data for users and websites. A Postman collection is also provided for API testing.
+This guide provides instructions on how to set up and run the Subscriptions Service using Docker. The setup includes an Adminer interface for database management and seeded data for users and websites. A Postman collection is also provided for API testing.
 
 ## Prerequisites
 
-Docker needs to be installed on the host machine to run the Laravel application in a containerized environment.
+Docker needs to be installed on the host machine to run the Subscriptions Service in a containerized environment.
 
 ## Getting Started
 
@@ -36,11 +36,11 @@ Run the following command in the root directory of the project to build and star
 docker-compose up --build
 ```
 
-This command builds the application and starts all services defined in `docker-compose.yml`, including the Laravel application, MySQL database, and Adminer. It also run the migrations and seed the database.
+This command builds the application and starts all services defined in `docker-compose.yml`, including the Subscriptions Service, MySQL database, and Adminer. It also run the migrations and seed the database.
 
 ### Step 4: Access the Application
 
-Once the containers are up and running, the Laravel application will be accessible at:
+Once the containers are up and running, the Subscriptions Service will be accessible at:
 
 ```
 http://localhost:2403
