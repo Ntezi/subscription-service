@@ -37,5 +37,6 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 COPY laravel-cron /etc/cron.d/laravel-cron
 RUN chmod 0644 /etc/cron.d/laravel-cron
 RUN crontab -u www-data /etc/cron.d/laravel-cron
+RUN touch /var/log/cron.log
 
 CMD ["entrypoint.sh"]
