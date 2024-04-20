@@ -14,4 +14,7 @@ php artisan migrate
 echo "Running Laravel seeders for websites..."
 php artisan db:seed
 
+echo "Starting cron..."
+service cron start
+
 exec apache2-foreground

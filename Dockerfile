@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
-    default-mysql-client # Add MySQL client to use it in entrypoint script
+    default-mysql-client \
+    cron
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -32,5 +33,9 @@ RUN composer install --optimize-autoloader --no-dev
 
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
+
+COPY laravel-cron /etc/cron.d/laravel-cron
+RUN chmod 0644 /etc/cron.d/laravel-cron
+RUN crontab -u www-data /etc/cron.d/laravel-cron
 
 CMD ["entrypoint.sh"]
