@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "4984bd6d-0bb9-4340-b7af-916d69f7a619",
+		"name": "Subscription Service APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28114236"
+	},
+	"item": [
+		{
+			"name": "subscribe/{websitesId}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"1\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{websites-api}}/subscribe/1",
+					"host": [
+						"{{websites-api}}"
+					],
+					"path": [
+						"subscribe",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts/{websitesId}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"New Post Title\",\n  \"description\": \"Detailed description of the new post.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{websites-api}}/posts/1",
+					"host": [
+						"{{websites-api}}"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "websites-api",
+			"value": "http://localhost:2403/api/websites",
+			"type": "string"
+		}
+	]
+}
