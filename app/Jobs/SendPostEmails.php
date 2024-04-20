@@ -32,8 +32,8 @@ class SendPostEmails implements ShouldQueue
         foreach ($unsentPosts as $post) {
             $subscribers = $post->website->subscribers;
 
-            // Only proceed if there are subscribers
             if ($subscribers->isEmpty()) {
+                Log::info("No subscribers found for post {$post->id}");
                 continue;
             }
 
@@ -43,6 +43,7 @@ class SendPostEmails implements ShouldQueue
                         $message->to($subscriber->email)
                             ->subject("New post available: " . $post->title);
                     });
+                    Log::info("Email sent for post {$post->id} to subscriber {$subscriber->email}");
                 } catch (Exception $e) {
                     Log::error("Failed to send email for post {$post->id} to subscriber {$subscriber->email}: {$e->getMessage()}");
                 }

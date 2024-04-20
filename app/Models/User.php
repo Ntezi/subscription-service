@@ -50,6 +50,6 @@ class User extends Authenticatable
      */
     public function websites()
     {
-        return $this->belongsToMany(Website::class);
+        return $this->belongsToMany(Website::class, 'user_website');
     }
 }

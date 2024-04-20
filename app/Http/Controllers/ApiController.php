@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Validator;
 
 class ApiController extends Controller
 {
-    // Subscribe user to a website
     public function subscribe(Request $request, $websiteId)
     {
         Log::info('Attempting to subscribe user', ['user_id' => $request->user_id, 'website_id' => $websiteId]);
@@ -42,7 +41,6 @@ class ApiController extends Controller
         return response()->json(['message' => 'Subscription successful'], 200);
     }
 
-    // Create a post for a particular website
     public function createPost(Request $request, $websiteId)
     {
         Log::info('Attempting to create a post', ['website_id' => $websiteId]);

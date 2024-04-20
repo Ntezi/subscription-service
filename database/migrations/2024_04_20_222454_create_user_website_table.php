@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('website', function (Blueprint $table) {
+        Schema::create('user_website', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->timestamps('created_at');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('website_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('websites');
+        Schema::dropIfExists('user_website');
     }
 };

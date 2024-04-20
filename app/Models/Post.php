@@ -9,6 +9,12 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'email_sent', // Add other fields as necessary
+    ];
+
     /**
      * Get the website that owns the post.
      */
